@@ -1,0 +1,226 @@
+
+@use "base";
+
+
+@mixin tablet {
+    @media(min-width: base.$tablet) {
+        @content;
+    }
+
+} 
+
+@mixin cross ($rotate, $size) {
+    width: 25px;
+    transform:$rotate;
+    position: relative;
+    top: $size; }
+
+
+body {
+    background-color: base.$background-color;
+     color: base.$text-color;
+     font-family: base.$font-stack;
+ }
+
+
+
+header {
+    height: 80px;
+    background-color: base.$primary-color;
+    position: relative;
+    padding: 0 1em;
+    justify-content: space-between;
+    align-items: center;
+
+nav {
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    display: none;
+    background-color: base.$darken-color;
+
+    // @include tablet {
+    //     nav {
+    //         display: block !important;
+    //         position: static;
+    //         box-shadow: 0 0px 0px;
+    //         height: auto;
+    //         font-size: 1.4em;
+    //         width: auto;
+    //     }
+    // }
+
+
+    ul{
+        width: 100%;
+        margin: 0 auto;
+    padding: 0;
+    list-style:none;
+    text-align: center;
+
+    // @include tablet {
+    //     height: 100%;
+    // }
+
+     }
+
+   
+
+
+li {
+    // display:inline-block;
+    padding: 0.8em 0;
+    width: 100%;
+
+    // @include tablet {
+    //     display: inline;
+    //     padding: 1.2em 0;
+    // }
+
+    }
+
+   
+
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+
+}
+
+}
+
+@include tablet {
+
+    header {
+        position: static;
+        display: flex;
+
+        nav {
+            display: block !important;
+            position: static;
+            box-shadow: 0 0px 0px;
+            height: auto;
+            font-size: 1.4em;
+            width: auto;
+        
+         ul {
+            height: 100%;
+         }
+
+         li {
+
+            display: inline;
+            padding: 1.2em 0;
+         }
+        
+         a {
+            display: inline;
+         }
+
+        }
+
+        
+
+    }
+    
+    #open-menu {
+        display: none !important;
+    }
+
+    }
+
+
+
+.menu-btn {
+    margin-top: 10px;
+    position: absolute;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: base.$darken-color;
+    border:  solid 2px;
+    cursor: pointer;
+
+   
+}
+@include tablet {
+    .menu-btn {
+        display: none;
+    }
+
+
+}
+
+ .menu-text {
+
+// position: flex;
+right: 0px;
+}
+
+// .open {
+//     margin: 0 1em;
+// }
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+
+
+/* de tre svarta strecken (hamburg-icon) */
+
+
+.bars {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+
+/* Meny knapp, stäng */
+
+
+.close {
+    /* margin: 1em (top) 1.5em (left); */
+    margin-top: 1em; 
+    margin-left: 3em;
+    padding: 10px 15px;
+
+
+}
+
+
+
+/* Roterar två lodräda streck, till ett kryss */
+
+
+
+.cross1 {
+    @include cross(rotate(45deg), 5px);}
+
+.cross2 {
+    @include cross(rotate(135deg), -3px)}
+
+
+
+
+
+
+
+    // .grid-container {    
+    //     display: grid;
+    //     grid-template-columns: repeat(16, 1fr);
+    //     grid-template-rows: repeat(20, auto);
+    //      max-width: 1512px;} 
+    
+    //      .position1 {
+    //         grid-area: 1/1/2/-1;
+    //      }

@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+}
+
+$primary-color: pink; 
+$darken-color:darken($primary-color, 40%);
+$secundary-color: green;
+$text-color:blue;
+$font-stack: sans-serif;
+$background-color: rgb(218, 191, 191); 
+
+
+$tablet: 850px;
