@@ -2,12 +2,19 @@
     margin: 0;
 }
 
-$primary-color: pink; 
-$darken-color:darken($primary-color, 40%);
-$secundary-color: green;
+
+
+$primary-color: rgb(211, 70, 94); 
+$darken-color:darken($primary-color, 20%);
+$secundary-color: rgb(123, 219, 123);
 $text-color:blue;
+$text-color-dark:rgb(223, 163, 186);
+$text-color-header:white;
 $font-stack: sans-serif;
-$background-color: rgb(218, 191, 191); 
+$background-color: lighten($primary-color, 40%);
+$background-color-dark: rgb(48, 45, 45);
+
 
 
 $tablet: 850px;
+
